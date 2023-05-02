@@ -8,7 +8,7 @@ class SplashPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(children: const [
-          Center(child: Text('SPLASH')),
+          Center(child: FlutterLogo()),
         ]),
       ),
     );

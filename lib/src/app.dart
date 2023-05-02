@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_ddd_template/src/features/login/presentation/screens/login_page.dart';
+import 'package:get_it/get_it.dart';
 
-import 'features/login/infrastructure/bloc/login_bloc.dart';
+import 'features/auth/login/application/login_command_handler.dart';
+import 'core/router/routes.dart';
+import 'features/auth/login/presentation/login_page.dart';
+import 'features/auth/login/presentation/bloc/login_bloc.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,9 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: Routes.routes,
       title: 'Flutter DDD Template',
       home: BlocProvider(
-          create: (context) => LoginBloc(), child: const LoginPage()),
+          create: (context) =>
+              LoginBloc(GetIt.instance.get<LoginCommandHandler>()),
+          child: const LoginPage()),
     );
   }
 }
