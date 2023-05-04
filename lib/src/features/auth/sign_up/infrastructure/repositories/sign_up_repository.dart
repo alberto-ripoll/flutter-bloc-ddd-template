@@ -1,10 +1,10 @@
-import 'package:flutter_ddd_template/src/features/auth/sign_up/domain/value_objects/email.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../../shared/user/domain/entities/User.dart';
+import '../../domain/value_objects/email.dart';
 import '../../../../../utils/http/http_client.dart';
-import '../../../shared/domain/value_objects/password/password.dart';
-import '../../../shared/domain/value_objects/username/username.dart';
-import '../../domain/entities/user.dart';
+import '../../../../shared/user/domain/value_objects/password/password.dart';
+import '../../../../shared/user/domain/value_objects/username/username.dart';
 import '../../domain/interfaces/sign_up_repository_interface.dart';
 
 @Injectable(as: SignUpRepositoryInterface)

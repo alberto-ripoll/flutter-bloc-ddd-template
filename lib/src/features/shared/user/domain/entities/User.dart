@@ -1,4 +1,4 @@
-import '../../../shared/domain/value_objects/username/username.dart';
+import '../../../user/domain/value_objects/username/username.dart';
 
 class User {
   final Username username;

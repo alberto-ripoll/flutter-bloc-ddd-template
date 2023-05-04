@@ -1,8 +1,7 @@
-import 'package:flutter_ddd_template/src/features/auth/sign_up/domain/value_objects/email.dart';
-
-import '../../../shared/domain/value_objects/username/username.dart';
-import '../../../shared/domain/value_objects/password/password.dart';
-import '../entities/user.dart';
+import '../../../../shared/user/domain/entities/User.dart';
+import '../../../../shared/user/domain/value_objects/password/password.dart';
+import '../value_objects/email.dart';
+import '../../../../shared/user/domain/value_objects/username/username.dart';
 
 abstract class SignUpRepositoryInterface {
   Future<User> signUp(Username username, Email email, Password password);

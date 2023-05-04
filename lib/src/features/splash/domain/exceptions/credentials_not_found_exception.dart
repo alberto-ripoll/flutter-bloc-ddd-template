@@ -1,0 +1,1 @@
+class CredentialsNotFoundException implements Exception {}

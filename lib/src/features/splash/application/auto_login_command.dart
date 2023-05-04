@@ -1,0 +1,3 @@
+class AutoLoginCommand {
+  AutoLoginCommand();
+}

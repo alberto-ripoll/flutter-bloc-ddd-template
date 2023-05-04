@@ -1,7 +1,7 @@
-import '../../../shared/domain/value_objects/password/exceptions/password_length_exception.dart';
-import '../../../shared/domain/value_objects/password/password.dart';
-import '../../../shared/domain/value_objects/username/exceptions/username_length_exception.dart';
-import '../../../shared/domain/value_objects/username/username.dart';
+import '../../../../shared/user/domain/value_objects/password/exceptions/password_length_exception.dart';
+import '../../../../shared/user/domain/value_objects/password/password.dart';
+import '../../../../shared/user/domain/value_objects/username/exceptions/username_length_exception.dart';
+import '../../../../shared/user/domain/value_objects/username/username.dart';
 
 String? validateUsername(String username) {
   try {
@@ -19,4 +19,11 @@ String? validatePassword(String password) {
   } on PasswordLengthException {
     return PasswordLengthException.message;
   }
+}
+
+String? validateConfirmedPassword(String password, String confirmedPassword) {
+  if (password != confirmedPassword) {
+    return 'Passwords dont match';
+  }
+  return null;
 }

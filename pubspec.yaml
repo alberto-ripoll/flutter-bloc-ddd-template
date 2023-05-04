@@ -40,6 +40,7 @@ dependencies:
   http: ^0.13.5
   bloc: ^8.1.1
   injectable: ^2.1.1
+  flutter_secure_storage: ^8.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

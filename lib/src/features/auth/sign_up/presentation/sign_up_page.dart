@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_ddd_template/src/features/auth/sign_up/presentation/bloc/events/sign_up_triggered_event.dart';
-import 'package:flutter_ddd_template/src/features/auth/sign_up/presentation/bloc/sign_up_state.dart';
-import 'package:flutter_ddd_template/src/features/auth/sign_up/presentation/bloc/states/error_sign_up_state.dart';
-import 'package:flutter_ddd_template/src/features/auth/sign_up/presentation/bloc/states/initial_sign_up_state.dart';
-import 'package:flutter_ddd_template/src/features/auth/sign_up/presentation/bloc/states/success_sign_up_state.dart';
 
+import 'bloc/events/sign_up_triggered_event.dart';
+import 'bloc/sign_up_state.dart';
+import 'bloc/states/error_sign_up_state.dart';
+import 'bloc/states/initial_sign_up_state.dart';
+import 'bloc/states/success_sign_up_state.dart';
+import 'widgets/confirm_password_input_field.dart';
 import '../../shared/presentation/widgets/password_input_field.dart';
 import 'bloc/sign_up_bloc.dart';
 import '../../shared/presentation/widgets/username_input_field.dart';
@@ -51,12 +52,18 @@ class SignUpForm extends StatelessWidget {
     final usernameController = TextEditingController();
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
+    final confirmedPasswordController = TextEditingController();
+
     return Column(
       children: [
         UsernameInputField(usernameController: usernameController),
         gapH16,
-        UsernameInputField(usernameController: usernameController),
         PasswordInputField(passwordController: passwordController),
+        gapW4,
+        ConfirmPasswordInputField(
+          passwordController: passwordController,
+          confirmedPasswordController: confirmedPasswordController,
+        ),
         gapH20,
         ElevatedButton(
           child: const Text('Sign Up'),

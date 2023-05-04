@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 
+import '../../../shared/user/domain/entities/User.dart';
 import 'login_command.dart';
-import '../domain/entities/user.dart';
 import '../domain/interfaces/login_repository_interface.dart';
 
 @injectable

@@ -1,4 +1,4 @@
-import '../../../domain/entities/user.dart';
+import '../../../../../shared/user/domain/entities/User.dart';
 import '../sign_up_state.dart';
 
 class SuccessSignUpState extends SignUpState {
